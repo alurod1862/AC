@@ -24,10 +24,24 @@ fun menu(){
 
 
     elecion = readln()!!.toInt()
-    var tabla = ""
 
         if (elecion == 1) {
-            createTableM()
+            var tabla=""
+            var nombre=""
+            var user=""
+            var telefono=""
+            var email=""
+            var id:Int=0
+            var password=""
+
+
+            println("Introduce la talba a crear: ")
+            tabla = readln()
+            println("Introduce el nombre del usuario: ")
+            nombre = readln()
+            println("Introduce el nombre del usuario: ")
+
+            createTableM(tabla,id,nombre,user,password,telefono,email)
         } else if (elecion == 2) {
             deleteTableM()
         } else if (elecion == 3) {
@@ -47,8 +61,3 @@ fun menu(){
 
 }
 
-
-fun queTablaEs(var tabla :String){
-    println("Introduce la tabla sobre la que vas a trabajar ")
-    tabla = readln()!!.toString()
-}

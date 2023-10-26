@@ -3,26 +3,26 @@ package CRUD
 import java.sql.DriverManager
 
 
-fun createTableM(){
+fun createTableM(tabla:String,id:Int,nombre:String,user:String,password:String,telefono:String,email:String){
     val url = "jdbc:sqlite:crud.sqlite"
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    var tabla = "USUARIO"
 
 
     val sentSQL = "CREATE TABLE $tabla(" +
-            "id INTEGER CONSTRAINT cp_id PRIMARY KEY, " +
-            "nombre TEXT, " +
-            "user TEXT, " +
-            "password TEXT, " +
-            "telefono INTEGER, " +
-            "email  TEXT" +
+            "$id INTEGER CONSTRAINT cp_id PRIMARY KEY, " +
+            "$nombre TEXT, " +
+            "$user TEXT, " +
+            "$password TEXT, " +
+            "$telefono TEXT, " +
+            "$email  TEXT" +
             ")"
 
 
     st.executeUpdate(sentSQL)
     st.close();
+
     con.close()
 
 }
@@ -34,8 +34,8 @@ fun insertarDatosTablaM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("INSERT INTO USUARIO VALUES (1,'Iker','Iker1','contrasenaDeIker',987654321,'iker@gmail.com')")
-    st.executeUpdate("INSERT INTO USUARIO VALUES (2,'Isaac','Isaac1','contrasenaDeIsaac',456123789,'isaac@gmail.com')")
+    st.executeUpdate("INSERT INTO USUARIO VALUES (1,'Iker','Iker1','contrasenaDeIker','987654321','iker@gmail.com')")
+    st.executeUpdate("INSERT INTO USUARIO VALUES (2,'Isaac','Isaac1','contrasenaDeIsaac','456123789','isaac@gmail.com')")
 
     st.close()
     con.close()
@@ -49,7 +49,7 @@ fun updateTableM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("UPDATE USUARIO SET telefono = 123456789 WHERE id = 1")
+    st.executeUpdate("UPDATE USUARIO SET telefono = '123456789' WHERE id = 1")
 
     st.close();
     con.close()
@@ -97,7 +97,7 @@ fun deleteTableM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("DELETE FROM USUARIO where telefono = 123456789")
+    st.executeUpdate("DELETE FROM USUARIO where telefono = '123456789'")
 
     st.close();
     con.close()
