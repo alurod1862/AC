@@ -20,28 +20,13 @@ fun menu(){
     println("5.DROP")
     println("6.CONSULT")
     println("7.SALIR")
-    println("Introduce una opcion(1-6): ")
+    println("Introduce una opcion(1-7): ")
 
 
     elecion = readln()!!.toInt()
 
         if (elecion == 1) {
-            var tabla=""
-            var nombre=""
-            var user=""
-            var telefono=""
-            var email=""
-            var id:Int=0
-            var password=""
-
-
-            println("Introduce la talba a crear: ")
-            tabla = readln()
-            println("Introduce el nombre del usuario: ")
-            nombre = readln()
-            println("Introduce el nombre del usuario: ")
-
-            createTableM(tabla,id,nombre,user,password,telefono,email)
+            createTableM()
         } else if (elecion == 2) {
             deleteTableM()
         } else if (elecion == 3) {

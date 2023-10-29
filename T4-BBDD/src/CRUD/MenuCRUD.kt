@@ -3,20 +3,19 @@ package CRUD
 import java.sql.DriverManager
 
 
-fun createTableM(tabla:String,id:Int,nombre:String,user:String,password:String,telefono:String,email:String){
+fun createTableM(){
     val url = "jdbc:sqlite:crud.sqlite"
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
 
-
-    val sentSQL = "CREATE TABLE $tabla(" +
-            "$id INTEGER CONSTRAINT cp_id PRIMARY KEY, " +
-            "$nombre TEXT, " +
-            "$user TEXT, " +
-            "$password TEXT, " +
-            "$telefono TEXT, " +
-            "$email  TEXT" +
+    val sentSQL = "CREATE TABLE USUARIO(" +
+            "id TEXT CONSTRAINT cp_id PRIMARY KEY, " +
+            "nombre TEXT, " +
+            "user TEXT, " +
+            "password TEXT, " +
+            "telefono TEXT, " +
+            "email  TEXT" +
             ")"
 
 
@@ -30,12 +29,26 @@ fun createTableM(tabla:String,id:Int,nombre:String,user:String,password:String,t
 fun insertarDatosTablaM(){
 
 
+    println("Introduce la talba donde se va a insertar: ")
+    var tabla = readln()
+    println("Introduce el id del usuario: ")
+    var id = readln()
+    println("Introduce el nombre: ")
+    var nombre = readln()
+    println("Introduce el nombre del usuario: ")
+    var user = readln()
+    println("Introduce el telefono del usuario: ")
+    var telefono = readln()
+    println("Introduce el email del usuario: ")
+    var email = readln()
+    println("Introduce la contraseña del usuario: ")
+    var password = readln()
+
     val url = "jdbc:sqlite:crud.sqlite"
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("INSERT INTO USUARIO VALUES (1,'Iker','Iker1','contrasenaDeIker','987654321','iker@gmail.com')")
-    st.executeUpdate("INSERT INTO USUARIO VALUES (2,'Isaac','Isaac1','contrasenaDeIsaac','456123789','isaac@gmail.com')")
+    st.executeUpdate("INSERT INTO $tabla VALUES ('$id','$nombre','$user','$password','$telefono','$email')")
 
     st.close()
     con.close()
@@ -49,7 +62,16 @@ fun updateTableM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("UPDATE USUARIO SET telefono = '123456789' WHERE id = 1")
+
+    println("Introduce la talba a actualizar: ")
+    var tabla = readln()
+    println("Introduce el telefono nuevo: ")
+    var telefono = readln()
+    println("Introduce el id del usuario: ")
+    var id = readln()
+
+
+    st.executeUpdate("UPDATE $tabla SET telefono = $telefono WHERE $id=1")
 
     st.close();
     con.close()
@@ -60,15 +82,20 @@ fun consultaTableM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    val sentenciaSQL = "SELECT * FROM USUARIO WHERE id = 1"
+    println("Introduce la talba a consultar: ")
+    var tabla = readln()
+    println("Introduce el id del usuario: ")
+    var id = readln()
+
+    val sentenciaSQL = "SELECT * FROM $tabla WHERE $id = 1"
     val rs = st.executeQuery(sentenciaSQL)
 
     while (rs.next()) {
-        print("" + rs.getInt(1) + "\t")
+        print("" + rs.getString(1) + "\t")
         print(rs.getString(2) + "\t")
         print("" + rs.getString(3) + "\t")
         print("" + rs.getString(4) + "\t")
-        print("" + rs.getInt(5) + "\t")
+        print("" + rs.getString(5) + "\t")
         println(rs.getString(6))
     }
 
@@ -84,7 +111,10 @@ fun dropTableM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("DROP TABLE USUARIO")
+    println("Introduce la talba a eliminar: ")
+    var tabla = readln()
+
+    st.executeUpdate("DROP TABLE $tabla")
 
     st.close();
     con.close()
@@ -97,7 +127,13 @@ fun deleteTableM(){
     val con = DriverManager.getConnection(url)
     val st = con.createStatement()
 
-    st.executeUpdate("DELETE FROM USUARIO where telefono = '123456789'")
+    println("Introduce la talba: ")
+    var tabla = readln()
+    println("Introduce el id del usuario: ")
+    var id = readln()
+
+
+    st.executeUpdate("DELETE FROM $tabla where $id = 2")
 
     st.close();
     con.close()
