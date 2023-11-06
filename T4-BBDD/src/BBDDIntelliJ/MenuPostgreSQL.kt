@@ -1,4 +1,5 @@
-package BBDDIntelliJ
+import BBDDIntelliJ.*
+
 
 fun main() {
     menuPostrgeSQL()
