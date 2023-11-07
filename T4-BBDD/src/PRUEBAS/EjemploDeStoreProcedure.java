@@ -16,9 +16,9 @@ public class EjemploDeStoreProcedure {
         Connection con = DriverManager.getConnection(url,usuario,password);
 
         CallableStatement c5tmt = con.prepareCall(
-                "{call CantidadPerosnas(?)}");
+                "{call cantidadnadadores}");
         c5tmt.registerOutParameter(1, Types.INTEGER);
-        c5tmt.setString(1,"iker%");
+
 
         c5tmt.execute();
         int resultado = c5tmt.getInt(1);

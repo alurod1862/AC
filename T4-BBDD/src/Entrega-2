@@ -1,0 +1,2 @@
+Es mejor utuliar preparedStatemnt a Statement ya que mejoras el timepo de consulta
+Y las ventajas de stored procedures son mayor seguridad ya que evitamos consultas con inyeciones y tambien reducimos le tiempo de consulta
