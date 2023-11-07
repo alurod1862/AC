@@ -1,4 +1,4 @@
-package CRUD
+package CRUD_SQLITE
 
 import java.sql.DriverManager
 

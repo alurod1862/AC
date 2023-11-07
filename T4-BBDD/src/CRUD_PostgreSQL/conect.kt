@@ -1,4 +1,4 @@
-package BBDDIntelliJ
+package CRUD_PostgreSQL
 
 
 import java.sql.DriverManager

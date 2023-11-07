@@ -1,11 +1,10 @@
-import BBDDIntelliJ.*
-
+package CRUD_MySQL
 
 fun main() {
-    menuPostrgeSQL()
+    menuMySQL()
 }
 
-fun menuPostrgeSQL(){
+fun menuMySQL(){
 
     var elecion:Int =0
     var sige = true
@@ -27,17 +26,17 @@ fun menuPostrgeSQL(){
         elecion = readln()!!.toInt()
 
         if (elecion == 1) {
-            createTableMP()
+            createTableM()
         } else if (elecion == 2) {
-            deleteTableMP()
+            deleteTableM()
         } else if (elecion == 3) {
-            updateTableMP()
+            updateTableM()
         } else if (elecion == 4) {
-            insertarDatosTablaMP()
+            insertarDatosTablaM()
         } else if (elecion == 5) {
-            dropTableMP()
+            dropTableM()
         } else if (elecion == 6) {
-            consultaTableMP()
+            consultaTableM()
         } else if (elecion == 7) {
             sige = false
         } else {

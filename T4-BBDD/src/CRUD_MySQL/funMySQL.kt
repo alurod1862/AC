@@ -1,10 +1,10 @@
-package BBDDIntelliJ
+package CRUD_MySQL
 
 import java.sql.DriverManager
 
-fun createTableMP() {
-    val url = "jdbc:postgresql://172.17.0.2:5432/postgres"
-    val usuari = "postgres"
+fun createTableM() {
+    val url = "jdbc:mysql://172.17.0.2:3306/Gestion"
+    val usuari = "root"
     val password = "secret"
 
     val con = DriverManager.getConnection(url, usuari, password)
@@ -18,7 +18,7 @@ fun createTableMP() {
     con.close()
 }
 
-fun insertarDatosTablaMP() {
+fun insertarDatosTablaM() {
     println("Introduce la tabla donde se va a insertar: ")
     var tabla = readLine()
     println("Introduce el id del usuario: ")
@@ -34,11 +34,9 @@ fun insertarDatosTablaMP() {
     println("Introduce la contraseña del usuario: ")
     var password = readLine()
 
-
-    val url = "jdbc:postgresql://172.17.0.2:5432/postgres"
-    val usuari = "postgres"
+    val url = "jdbc:mysql://172.17.0.2:3306/Gestion"
+    val usuari = "root"
     val passwordb = "secret"
-
 
     val con = DriverManager.getConnection(url, usuari, passwordb)
     val st = con.createStatement()
@@ -57,9 +55,9 @@ fun insertarDatosTablaMP() {
     con.close()
 }
 
-fun updateTableMP() {
-    val url = "jdbc:postgresql://172.17.0.2:5432/postgres"
-    val usuari = "postgres"
+fun updateTableM() {
+    val url = "jdbc:mysql://172.17.0.2:3306/Gestion"
+    val usuari = "root"
     val password1 = "secret"
 
     val con = DriverManager.getConnection(url, usuari, password1)
@@ -97,9 +95,9 @@ fun updateTableMP() {
     con.close()
 }
 
-fun consultaTableMP() {
-    val url = "jdbc:postgresql://172.17.0.2:5432/postgres"
-    val usuari = "postgres"
+fun consultaTableM() {
+    val url = "jdbc:mysql://172.17.0.2:3306/Gestion"
+    val usuari = "root"
     val password = "secret"
 
     val con = DriverManager.getConnection(url, usuari, password)
@@ -130,9 +128,9 @@ fun consultaTableMP() {
     con.close()
 }
 
-fun dropTableMP() {
-    val url = "jdbc:postgresql://172.17.0.2:5432/postgres"
-    val usuari = "postgres"
+fun dropTableM() {
+    val url = "jdbc:mysql://172.17.0.2:3306/Gestion"
+    val usuari = "root"
     val password = "secret"
 
     val con = DriverManager.getConnection(url, usuari, password)
@@ -149,8 +147,8 @@ fun dropTableMP() {
     con.close()
 }
 
-fun deleteTableMP() {
-    val url = "jdbc:postgresql://172.17.0.2:5432/postgres"
+fun deleteTableM() {
+    val url = "jdbc:mysql://172.17.0.2:3306/Gestion"
     val usuari = "root"
     val password = "secret"
 
