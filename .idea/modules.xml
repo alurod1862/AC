@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AC.iml" filepath="$PROJECT_DIR$/.idea/AC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T2/E1/E1.iml" filepath="$PROJECT_DIR$/T2/E1/E1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T2/T2E1/T2E1.iml" filepath="$PROJECT_DIR$/T2/T2E1/T2E1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T2/T2E2/T2E2.iml" filepath="$PROJECT_DIR$/T2/T2E2/T2E2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T2/T2E3/T2E3.iml" filepath="$PROJECT_DIR$/T2/T2E3/T2E3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T3/T3E2/T3E2.iml" filepath="$PROJECT_DIR$/T3/T3E2/T3E2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T3/T3E3/T3E3.iml" filepath="$PROJECT_DIR$/T3/T3E3/T3E3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T3/T3E3_4_4/T3E3_4_4.iml" filepath="$PROJECT_DIR$/T3/T3E3_4_4/T3E3_4_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T3/T3E5/T3E5.iml" filepath="$PROJECT_DIR$/T3/T3E5/T3E5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T4-BBDD/T4-BBDD.iml" filepath="$PROJECT_DIR$/T4-BBDD/T4-BBDD.iml" />
+    </modules>
+  </component>
+</project>
